@@ -1,0 +1,49 @@
+Here's the solution of Space Probe
+
+Probe take 200 reading per day.
+Temp. varies: -100 to +150.
+Only send 100 bytes per day.
+
+Terms that are used:
+1 byte = 8 bit
+and bit only store 0 and 1
+integer takes :- 4 byte
+character takes:- 2 byte
+
+
+Problem solution:-
+Let's start we know we have 100 bytes
+so, we can sent earth to 100/4 = 25 readings.
+we have 24 hr in a day.
+So, it simplyfy the problem.
+Every hour one temp. we store into 4 byte.
+so, we consume 24*4
+i.e 96 hr.
+we left over with 4 bytes.
+Use case of 4 byte:-
+To meke it simple we know we have 4 bytes left over
+When we sent data to earth we add 2-2 byte of character
+i.e
+for Max temp:- we add in starting "Mx" in 2 bytes of that temprature.
+for Min temp:- we add in starting "Mn" in 2 bytes of that temprature.
+Here we can find the approx max and min temprature.
+
+
+
+
+Requirement 1:-
+We need to know the temp on particular time.
+We send all the hr data. So,
+Suppose if the scientist want the temp on 8PM we have temp on that time. If he want data 8AM we also have data on that time.
+We data in continuty along with Mi and Mx.
+We send every 4 byte 1hr temp.
+24*4 = 96 byte it consume.
+
+
+Requirement 2:-
+We need to find the approx minimum and Maximum temp.
+We have left 4 byte of data when we send the data we add Mi and Mx to maximum and minimum of the temp.
+Here We consume all 100 byte.
+
+
+
